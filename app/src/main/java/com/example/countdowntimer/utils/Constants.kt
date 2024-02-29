@@ -11,9 +11,12 @@ object Constants {
 
     const val TIMER_VALUE = 500490L
 
+    const val COUNTDOWN_INTERVEL = 1000L
+
     const val FACEBOOK_PROFILE = "ginnedumu.peddiraju"
 
     const val INSTAGRAM_PROFILE = "raju_real1"
 
     const val LINKEDIN_PROFILE = "peddiraju-ginnedumu"
+
 }

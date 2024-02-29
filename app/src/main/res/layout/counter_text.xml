@@ -10,8 +10,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/counterCard"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/size_70"
+        android:layout_height="@dimen/size_70"
         android:layout_gravity="center"
         app:cardBackgroundColor="@color/counter_background"
         tools:context=".view.CountDownActivity">
@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:text="@string/counter_text"
             android:textColor="@color/counter_text"
-            android:textSize="42sp" />
+            android:textSize="@dimen/text_size_42" />
 
     </androidx.cardview.widget.CardView>
 
@@ -35,6 +35,6 @@
         android:layout_marginTop="@dimen/size_8"
         android:text="@string/counter_type"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="@dimen/text_size_12"
         android:textStyle="bold" />
 </LinearLayout>

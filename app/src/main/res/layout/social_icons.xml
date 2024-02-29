@@ -8,4 +8,5 @@
     android:contentDescription="@string/app_name"
     android:src="@mipmap/facebook"
     tools:context=".view.CountDownActivity">
+    
 </ImageView>

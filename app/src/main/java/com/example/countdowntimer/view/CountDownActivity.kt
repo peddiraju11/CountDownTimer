@@ -26,7 +26,7 @@ class CountDownActivity : AppCompatActivity() {
         binding = ActivityCounterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setData()
+        setInitaialData()
 
         countDownViewModel = ViewModelProvider(this).get(CountDownViewModel::class.java)
 
@@ -41,17 +41,10 @@ class CountDownActivity : AppCompatActivity() {
 
     private fun updateCountdownUI(countDownData: CountDownData) {
         binding.apply {
-
             addAnim(item1.counterData,countDownData.days, item1.counterCard )
             addAnim(item2.counterData,countDownData.hours, item2.counterCard )
             addAnim(item3.counterData,countDownData.minutes, item3.counterCard )
             addAnim(item4.counterData,countDownData.seconds, item4.counterCard )
-
-            item1.counterData.text = (countDownData.days).toString()
-            item2.counterData.text = (countDownData.hours).toString()
-            item3.counterData.text = (countDownData.minutes).toString()
-            item4.counterData.text = (countDownData.seconds).toString()
-
         }
     }
 
@@ -66,10 +59,12 @@ class CountDownActivity : AppCompatActivity() {
                 )
             else
                 counterCard.clearAnimation()
+
+            counterData.text = timeValue
         }
     }
 
-    private fun setData() {
+    private fun setInitaialData() {
         binding.apply {
             item1.counterName.text = Constants.DAYS
             item2.counterName.text = Constants.HOURS

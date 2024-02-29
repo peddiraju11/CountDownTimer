@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.countdowntimer.model.CountDownData
+import com.example.countdowntimer.utils.Constants
 
 class CountDownViewModel : ViewModel() {
 
@@ -15,7 +16,7 @@ class CountDownViewModel : ViewModel() {
     private lateinit var timer: CountDownTimer
 
     fun startTimer(totalSeconds: Long) {
-        timer = object : CountDownTimer(totalSeconds * 1000, 1000) {
+        timer = object : CountDownTimer(totalSeconds * 1000, Constants.COUNTDOWN_INTERVEL) {
             override fun onTick(millisUntilFinished: Long) {
                 val timeRemaining = calculateTimeRemaining(millisUntilFinished)
                 _countdown.postValue(timeRemaining)
