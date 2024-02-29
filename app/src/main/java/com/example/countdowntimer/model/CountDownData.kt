@@ -1,8 +1,8 @@
 package com.example.countdowntimer.model
 
 data class CountDownData(
-    val days: String,
-    val hours: String,
-    val minutes: String,
-    val seconds: String
+    var days: String,
+    var hours: String,
+    var minutes: String,
+    var seconds: String
 )

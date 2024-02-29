@@ -33,7 +33,7 @@ class CountDownViewModel : ViewModel() {
         timer.start()
     }
 
-    private fun calculateTimeRemaining(millisUntilFinished: Long): CountDownData {
+    fun calculateTimeRemaining(millisUntilFinished: Long): CountDownData {
         val totalSeconds = millisUntilFinished / 1000
 
         val days = totalSeconds / (24 * 3600)
@@ -52,7 +52,7 @@ class CountDownViewModel : ViewModel() {
         timer.cancel()
     }
 
-    private fun String.prependZeroIfSingleDigit(): String {
+    fun String.prependZeroIfSingleDigit(): String {
         return if (length == 1) {
             "0$this"
         } else {
