@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.countdowntimer.databinding.ActivityCounterBinding
 import com.example.countdowntimer.model.CountDownData
+import com.example.countdowntimer.utils.Constants
 import com.example.countdowntimer.viewmodel.CountDownViewModel
 
 class CountDownActivity : AppCompatActivity() {
@@ -18,18 +19,37 @@ class CountDownActivity : AppCompatActivity() {
         binding = ActivityCounterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setData()
+
         countDownViewModel = ViewModelProvider(this).get(CountDownViewModel::class.java)
 
         countDownViewModel.countdown.observe(this, Observer {
             updateCountdownUI(it)
         })
 
-        countDownViewModel.startTimer(60) // 60 Sec
+        countDownViewModel.startTimer(Constants.TIMER_VALUE) // 60 Sec
     }
 
-    private fun updateCountdownUI(data: CountDownData) {
+    private fun updateCountdownUI(countDownData: CountDownData) {
         binding.apply {
-            counterText.text = data.seconds.toString()
+
+            item1.counterData.text = (countDownData.days).toString()
+            item2.counterData.text = (countDownData.hours).toString()
+            item3.counterData.text = (countDownData.minutes).toString()
+            item4.counterData.text = (countDownData.seconds).toString()
+
+
+
+
+        }
+    }
+
+    private fun setData() {
+        binding.apply {
+            item1.counterName.text = Constants.DAYS
+            item2.counterName.text = Constants.HOURS
+            item3.counterName.text = Constants.MINUTES
+            item4.counterName.text = Constants.SECONDS
         }
     }
 }

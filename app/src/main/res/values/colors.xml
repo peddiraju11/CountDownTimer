@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="counter_background">#35374b</color>
+    <color name="counter_text">#c66c87</color>
+    <color name="main_background">#1e1e28</color>
+
+    <color name="flip_background">#FAFAFA</color>
+    <color name="flip_gradient_end">#05000000</color>
+    <color name="flip_gradient_start">#00000000</color>
 </resources>
