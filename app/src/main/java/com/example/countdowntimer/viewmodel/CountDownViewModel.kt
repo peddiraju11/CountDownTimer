@@ -22,7 +22,11 @@ class CountDownViewModel : ViewModel() {
             }
 
             override fun onFinish() {
-                _countdown.value = CountDownData(0, 0, 0, 0)
+                _countdown.value = CountDownData(
+                    0.toString().prependZeroIfSingleDigit(),
+                    0.toString().prependZeroIfSingleDigit(),
+                    0.toString().prependZeroIfSingleDigit(),
+                    0.toString().prependZeroIfSingleDigit())
             }
         }
         timer.start()
@@ -35,7 +39,11 @@ class CountDownViewModel : ViewModel() {
         val hours = (totalSeconds % (24 * 3600)) / 3600
         val minutes = ((totalSeconds % 3600) / 60)
         val seconds = (totalSeconds % 60)
-        return CountDownData(days, hours, minutes, seconds)
+        return CountDownData(
+            days.toString().prependZeroIfSingleDigit(),
+            hours.toString().prependZeroIfSingleDigit(),
+            minutes.toString().prependZeroIfSingleDigit(),
+            seconds.toString().prependZeroIfSingleDigit())
     }
 
     override fun onCleared() {
@@ -43,4 +51,11 @@ class CountDownViewModel : ViewModel() {
         timer.cancel()
     }
 
+    private fun String.prependZeroIfSingleDigit(): String {
+        return if (length == 1) {
+            "0$this"
+        } else {
+            this
+        }
+    }
 }

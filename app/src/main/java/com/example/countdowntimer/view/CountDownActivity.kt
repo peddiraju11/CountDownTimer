@@ -4,6 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -39,11 +42,30 @@ class CountDownActivity : AppCompatActivity() {
     private fun updateCountdownUI(countDownData: CountDownData) {
         binding.apply {
 
+            addAnim(item1.counterData,countDownData.days, item1.counterCard )
+            addAnim(item2.counterData,countDownData.hours, item2.counterCard )
+            addAnim(item3.counterData,countDownData.minutes, item3.counterCard )
+            addAnim(item4.counterData,countDownData.seconds, item4.counterCard )
+
             item1.counterData.text = (countDownData.days).toString()
             item2.counterData.text = (countDownData.hours).toString()
             item3.counterData.text = (countDownData.minutes).toString()
             item4.counterData.text = (countDownData.seconds).toString()
 
+        }
+    }
+
+    private fun addAnim(counterData: TextView, timeValue: String, counterCard: CardView) {
+        binding.apply {
+            if (counterData.text != (timeValue))
+                counterCard.startAnimation(
+                    AnimationUtils.loadAnimation(
+                        applicationContext,
+                        R.anim.up_animator
+                    )
+                )
+            else
+                counterCard.clearAnimation()
         }
     }
 

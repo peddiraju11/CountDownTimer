@@ -14,7 +14,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center"
         app:cardBackgroundColor="@color/counter_background"
-        tools:context=".MainActivity2">
+        tools:context=".view.CountDownActivity">
 
         <TextView
             android:id="@+id/counterData"

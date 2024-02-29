@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="counter_background">#35374b</color>
+    <color name="counter_background12">#6035374b</color>
+
     <color name="counter_text">#c66c87</color>
     <color name="main_background">#1e1e28</color>
 
