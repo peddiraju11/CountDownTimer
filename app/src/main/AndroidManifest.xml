@@ -13,16 +13,12 @@
         android:theme="@style/Theme.CountDownTimer"
         tools:targetApi="31">
         <activity
-            android:name=".CounterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".view.CountDownActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.CountDownTimer">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
