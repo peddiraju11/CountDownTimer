@@ -51,4 +51,30 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/imageBlock"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal|center"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.3"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/block">
+
+        <include
+            android:id="@+id/imageItem1"
+            layout="@layout/social_icons" />
+
+        <include
+            android:id="@+id/imageItem2"
+            layout="@layout/social_icons" />
+
+        <include
+            android:id="@+id/imageItem3"
+            layout="@layout/social_icons" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
